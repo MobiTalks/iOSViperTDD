@@ -80,7 +80,7 @@ class LoginTests: QuickSpec {
                 }
             }
             
-            describe("quando a validação de login externa retornar") {
+            describe("quando a validação externa de login retornar") {
                 
                 context("com sucesso") {
                     
