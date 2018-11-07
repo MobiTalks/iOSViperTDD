@@ -2,6 +2,12 @@
   Login.strings
   MobiTalksTDDiOS
 
-  Created by Victor Magalhaes on 07/11/18.
+  Created by Victor Magalhaes on future.
   Copyright © 2018 MobiTalks. All rights reserved.
 */
+
+"email_placeholder" = "Insira seu email";
+"senha_placeholder" = "Insira sua senha";
+"entrar" = "Entrar";
+"error_title" = "Ops!";
+"error_message" = "Dados de login inválidos. Caso deseje ser um de nossos clientes, clique e 'Saiba mais'.";

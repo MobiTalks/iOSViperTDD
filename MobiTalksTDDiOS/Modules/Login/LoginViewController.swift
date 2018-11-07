@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  MobiTalksTDDiOS
 //
-//  Created by Victor Magalhaes on 07/11/18.
+//  Created by Victor Magalhaes on future.
 //  Copyright © 2018 MobiTalks. All rights reserved.
 //
 
@@ -12,16 +12,30 @@ import Foundation
 
 class LoginViewController: UIViewController {
     
+    
+    // MARK: Properties
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "gpromed_icon_large")
+        imageView.image = UIImage(named: "")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
+    private let loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .white
+        button.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 14)
+        button.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        button.layer.shadowRadius = 10
+        button.layer.shadowOpacity = 0.5
+        button.layer.cornerRadius = 5
+        button.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        return button
+    }()
+    
     private let backgoundGradientLayer = GradientBackgroundLayer()
-    private let loginButton = ContinueButton(fontSize: 14).systemType()
     private let emailTextField = LoginTextField(fontSize: 18, inputType: .email)
     private let passwordTextField = LoginTextField(fontSize: 18, inputType: .password)
     private var loaderView = LOTAnimationView()
@@ -32,6 +46,8 @@ class LoginViewController: UIViewController {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
+    
+    // MARK: Lifecycle
     
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) { return nil }
@@ -46,6 +62,8 @@ class LoginViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    
+    // MARK: Private methods
     
     @objc private func keyboardWillShow(sender: NSNotification) {
         self.view.frame.origin.y = -70 // Move view 150 points upward

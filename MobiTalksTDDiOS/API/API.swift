@@ -2,7 +2,7 @@
 //  API.swift
 //  MobiTalksTDDiOS
 //
-//  Created by Victor Magalhaes on 07/11/18.
+//  Created by Victor Magalhaes on future.
 //  Copyright © 2018 MobiTalks. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ enum HttpResponse {
     case error
 }
 
-class APIHandler {
+class API {
     
     func request<T: Decodable>(url: [PathURL], parameters: [String: Any], httpMethod: HttpMethod, completion: @escaping (T?, String?) -> ()) {
         
