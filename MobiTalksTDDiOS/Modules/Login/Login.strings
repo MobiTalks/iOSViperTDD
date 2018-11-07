@@ -10,4 +10,4 @@
 "senha_placeholder" = "Insira sua senha";
 "entrar" = "Entrar";
 "error_title" = "Ops!";
-"error_message" = "Dados de login inválidos. Caso deseje ser um de nossos clientes, clique e 'Saiba mais'.";
+"error_message" = "Dados de login inválidos.";

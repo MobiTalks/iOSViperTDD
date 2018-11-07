@@ -27,7 +27,7 @@ extension LoginInteractor: LoginInteractorInput {
                 self.output?.loginValidateFailed()
                 return
             }
-            self.output?.loginValidationSucceded(userData: response)
+            self.output?.loginValidationSucceded()
         }
     }
 }

@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setHomeAsRootViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = HomeRouter().buildModule()
+        window?.rootViewController = HomeViewController()
         window?.makeKeyAndVisible()
     }
     

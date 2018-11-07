@@ -15,6 +15,10 @@
 		71A4039521929F09008D9150 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4039421929F09008D9150 /* LoginTextField.swift */; };
 		71A403982192A0D6008D9150 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A403972192A0D6008D9150 /* HomeViewController.swift */; };
 		71A4039B2192A1D7008D9150 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4039A2192A1D7008D9150 /* Login.swift */; };
+		71A4039E2192A28B008D9150 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4039D2192A28B008D9150 /* UIView.swift */; };
+		71A403A02192A293008D9150 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4039F2192A293008D9150 /* Strings.swift */; };
+		71A403A22192A963008D9150 /* mobi.json in Resources */ = {isa = PBXBuildFile; fileRef = 71A403A12192A963008D9150 /* mobi.json */; };
+		71A403A42192AE40008D9150 /* glow_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 71A403A32192AE40008D9150 /* glow_loading.json */; };
 		71E995E6219293A500CAF347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E995E5219293A500CAF347 /* AppDelegate.swift */; };
 		71E995E8219293A500CAF347 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E995E7219293A500CAF347 /* LoginViewController.swift */; };
 		71E995ED219293A700CAF347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71E995EC219293A700CAF347 /* Assets.xcassets */; };
@@ -49,6 +53,10 @@
 		71A4039421929F09008D9150 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		71A403972192A0D6008D9150 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		71A4039A2192A1D7008D9150 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		71A4039D2192A28B008D9150 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		71A4039F2192A293008D9150 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		71A403A12192A963008D9150 /* mobi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mobi.json; sourceTree = "<group>"; };
+		71A403A32192AE40008D9150 /* glow_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = glow_loading.json; sourceTree = "<group>"; };
 		71E995E2219293A500CAF347 /* MobiTalksTDDiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobiTalksTDDiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E995E5219293A500CAF347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71E995E7219293A500CAF347 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +130,15 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		71A4039C2192A280008D9150 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				71A4039D2192A28B008D9150 /* UIView.swift */,
+				71A4039F2192A293008D9150 /* Strings.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		71E995D9219293A500CAF347 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +162,9 @@
 		71E995E4219293A500CAF347 /* MobiTalksTDDiOS */ = {
 			isa = PBXGroup;
 			children = (
+				71A403A32192AE40008D9150 /* glow_loading.json */,
+				71A403A12192A963008D9150 /* mobi.json */,
+				71A4039C2192A280008D9150 /* Extensions */,
 				71A403992192A1C7008D9150 /* Entities */,
 				71A4039121929E20008D9150 /* UIComponents */,
 				71A4038A2192971C008D9150 /* API */,
@@ -186,13 +206,13 @@
 		71E996072192956800CAF347 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				71E995E7219293A500CAF347 /* LoginViewController.swift */,
-				71E996082192958B00CAF347 /* LoginPresenter.swift */,
-				71E9960A219295A000CAF347 /* LoginRouter.swift */,
-				71E9960C219295AF00CAF347 /* LoginInteractor.swift */,
-				71E9960E219295C800CAF347 /* LoginProtocols.swift */,
-				71E996102192961F00CAF347 /* LoginPresenterTests.swift */,
 				71A4038F21929CC8008D9150 /* Login.strings */,
+				71E9960C219295AF00CAF347 /* LoginInteractor.swift */,
+				71E996082192958B00CAF347 /* LoginPresenter.swift */,
+				71E996102192961F00CAF347 /* LoginPresenterTests.swift */,
+				71E9960E219295C800CAF347 /* LoginProtocols.swift */,
+				71E9960A219295A000CAF347 /* LoginRouter.swift */,
+				71E995E7219293A500CAF347 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -302,6 +322,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A403A22192A963008D9150 /* mobi.json in Resources */,
+				71A403A42192AE40008D9150 /* glow_loading.json in Resources */,
 				71E995F0219293A700CAF347 /* LaunchScreen.storyboard in Resources */,
 				71A4039021929CC8008D9150 /* Login.strings in Resources */,
 				71E995ED219293A700CAF347 /* Assets.xcassets in Resources */,
@@ -399,11 +421,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A4039E2192A28B008D9150 /* UIView.swift in Sources */,
 				71A4039321929EE8008D9150 /* GradientBackgroundLayer.swift in Sources */,
 				71E996092192958B00CAF347 /* LoginPresenter.swift in Sources */,
 				71E995E8219293A500CAF347 /* LoginViewController.swift in Sources */,
 				71A4039B2192A1D7008D9150 /* Login.swift in Sources */,
 				71A4038E21929846008D9150 /* Path.swift in Sources */,
+				71A403A02192A293008D9150 /* Strings.swift in Sources */,
 				71E9960B219295A000CAF347 /* LoginRouter.swift in Sources */,
 				71E9960F219295C800CAF347 /* LoginProtocols.swift in Sources */,
 				71E9960D219295AF00CAF347 /* LoginInteractor.swift in Sources */,

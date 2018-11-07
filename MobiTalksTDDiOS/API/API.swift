@@ -52,10 +52,7 @@ class API {
     
     private func makeRequest(url: [PathURL], parameters: [String: Any], method: HttpMethod) -> URLRequest? {
         
-        let currentUrl = url
-            .reduce("") { $0 + $1.rawValue } + "?" + parameters
-                .map { "\($0.key)=\($0.value)" }
-                .joined(separator: "&")
+        let currentUrl = url.reduce("") { $0 + $1.rawValue }
         
         guard let `url` = URL(string: currentUrl) else { return nil}
         

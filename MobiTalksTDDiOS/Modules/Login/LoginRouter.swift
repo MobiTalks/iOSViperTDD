@@ -15,8 +15,8 @@ class LoginRouter {
     func buildModule() -> UIViewController {
         let router = LoginRouter()
         let presenter = LoginPresenter(router: router)
-        let services = LoginInteractor()
-        services.output = presenter
+        let interactor = LoginInteractor()
+        interactor.output = presenter
         presenter.interactor = interactor
         let viewController = LoginViewController(presenter: presenter)
         router.view = viewController
@@ -24,8 +24,8 @@ class LoginRouter {
     }
 }
 
-extension LoginRouter: LoginWireFrame {
-    func showLoginError(title: String, message: String) {
+extension LoginRouter: LoginRoutering {
+    func presentAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertController.addAction(action)

@@ -75,9 +75,43 @@ class LoginTests: QuickSpec {
                         presenter?.passwordInputDidChange("wrong")
                         presenter?.primaryActionSelected()
                         expect(router?.showAlertCalled) == true
-                        expect(router?.errorMessagePassed) == "Dados de login inválidos. Caso deseje ser um de nossos clientes, clique e 'Saiba mais'."
+                        expect(router?.errorMessagePassed) == "Dados de login inválidos."
+                    }
+                }
+            }
+            
+            describe("quando a validação de login externa retornar") {
+                
+                context("com sucesso") {
+                    
+                    beforeEach{
+                        presenter?.loginValidationSucceded()
                     }
                     
+                    it("deverá esconder o loading"){
+                        expect(view?.hideLoadingCalled) == true
+                    }
+                    
+                    it("deverá chamar o método de navegação para a home"){
+                        expect(router?.navigateToHomeCalled) == true
+                    }
+                }
+                
+                context("com erro") {
+                    
+                    beforeEach{
+                        presenter?.loginValidateFailed()
+                    }
+                    
+                    it("deverá esconder o loading"){
+                        expect(view?.hideLoadingCalled) == true
+                    }
+                    
+                    it("apresentar um alert de erro ao usuário"){
+                        expect(router?.showAlertCalled) == true
+                        expect(router?.errorMessagePassed) == "Dados de login inválidos."
+                        expect(router?.errorTitlePassed) == "Ops!"
+                    }
                 }
             }
         }
@@ -118,18 +152,20 @@ private class LoginViewSpy: LoginView {
     }
 }
 
-private class LoginRouterSpy: LoginWireFrame {
+private class LoginRouterSpy: LoginRoutering {
     var navigateToHomeCalled: Bool?
     var showAlertCalled: Bool?
     var errorMessagePassed: String?
+    var errorTitlePassed: String?
     
     func navigateToHome() {
         navigateToHomeCalled = true
     }
     
-    func showError(title: String, message: String) {
+    func presentAlert(title: String, message: String) {
         showAlertCalled = true
         errorMessagePassed = message
+        errorTitlePassed = title
     }
 }
 

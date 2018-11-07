@@ -12,16 +12,8 @@ import Foundation
 
 class LoginViewController: UIViewController {
     
-    
     // MARK: Properties
-    private let logoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "")
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
+
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -39,6 +31,7 @@ class LoginViewController: UIViewController {
     private let emailTextField = LoginTextField(fontSize: 18, inputType: .email)
     private let passwordTextField = LoginTextField(fontSize: 18, inputType: .password)
     private var loaderView = LOTAnimationView()
+    private var mobiView = LOTAnimationView()
     
     let presenter: LoginPresenter
     
@@ -59,6 +52,12 @@ class LoginViewController: UIViewController {
         presenter.attachView(view: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        addMobiAnimation()
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -71,6 +70,20 @@ class LoginViewController: UIViewController {
     
     @objc private func keyboardWillHide(sender: NSNotification) {
         self.view.frame.origin.y = 0 // Move view to original position
+    }
+    
+    private func addMobiAnimation() {
+        mobiView.removeFromSuperview()
+        mobiView = LOTAnimationView(name: "mobi.json")
+        mobiView.backgroundColor = .clear
+        mobiView.frame.size = CGSize(width: view.frame.width, height: view.frame.height * 0.15)
+        mobiView.contentMode = .scaleAspectFit
+        mobiView.frame.origin = CGPoint(x: 0, y: view.frame.height * 0.10)
+        mobiView.loopAnimation = true
+        mobiView.animationSpeed = 0.7
+        
+        view.addSubview(mobiView)
+        mobiView.play()
     }
     
     private func setupObservers() {
@@ -98,7 +111,6 @@ class LoginViewController: UIViewController {
     
     private func setupLayout() {
         view.layer.addSublayer(backgoundGradientLayer)
-        view.addSubview(logoImageView)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
@@ -106,12 +118,7 @@ class LoginViewController: UIViewController {
         //TODO: Implementar screenbased para atuar sobre todos modelos de tela
         NSLayoutConstraint.activate([
             
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
-            logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            logoImageView.heightAnchor.constraint(equalToConstant: 150),
-            
-            emailTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: view.frame.height * 0.10),
+            emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height * 0.3),
             emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             emailTextField.heightAnchor.constraint(equalToConstant: 45),
@@ -125,7 +132,6 @@ class LoginViewController: UIViewController {
             loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             loginButton.heightAnchor.constraint(equalToConstant: 50),
-            
             ])
     }
 }
@@ -160,7 +166,7 @@ extension LoginViewController: LoginView {
 extension LoginViewController {
     private func addLoaderView() {
         loaderView.removeFromSuperview()
-        loaderView = LOTAnimationView(name: "heartrate.json")
+        loaderView = LOTAnimationView(name: "glow_loading.json")
         loaderView.backgroundColor = UIColor(red: 45/255, green: 45/255, blue: 45/255, alpha: 0.7)
         loaderView.frame.size = view.frame.size
         loaderView.contentMode = .scaleAspectFit

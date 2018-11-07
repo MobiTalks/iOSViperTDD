@@ -14,14 +14,14 @@ class LoginPresenter {
     
     private weak var view: LoginView?
     private var router: LoginRoutering
-    var services: LoginInteractorInput?
+    var interactor: LoginInteractorInput?
     
     private var inputedEmail: String?
     private var inputedPassword: String?
 
     // MARK: public methods
     
-    init(router: LoginWireFrame) {
+    init(router: LoginRoutering) {
         self.router = router
     }
     
@@ -40,7 +40,7 @@ class LoginPresenter {
             let login = Login.init(user: inputedEmail ?? "", pass: inputedPassword ?? "")
             interactor?.validateLogin(login)
         } else {
-            router.showLoginError(
+            router.presentAlert(
                 title: "error_title".localized(tableName: "Login"),
                 message: "error_message".localized(tableName: "Login")
             )
@@ -57,14 +57,14 @@ class LoginPresenter {
 }
 
 extension LoginPresenter: LoginInteractorOutput {
-    func loginValidationSucceded(userData: LoginSuccess) {
+    func loginValidationSucceded() {
         view?.hideLoading()
-        router.navigateToCameraScene()
+        router.navigateToHome()
     }
     
     func loginValidateFailed() {
         view?.hideLoading()
-        router.showError(
+        router.presentAlert(
             title: "error_title".localized(tableName: "Login"),
             message: "error_message".localized(tableName: "Login")
         )

@@ -17,8 +17,8 @@ protocol LoginView: class {
 }
 
 protocol LoginRoutering: class {
-    func showError(title: String, message: String)
-    func navigateToCameraScene()
+    func presentAlert(title: String, message: String)
+    func navigateToHome()
 }
 
 protocol LoginInteractorInput: class {
@@ -26,6 +26,6 @@ protocol LoginInteractorInput: class {
 }
 
 protocol LoginInteractorOutput: class {
-    func loginValidationSucceded(userData: LoginSuccess)
+    func loginValidationSucceded()
     func loginValidateFailed()
 }
