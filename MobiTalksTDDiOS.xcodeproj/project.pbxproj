@@ -10,6 +10,7 @@
 		477F38A0A17BB9766C9C79D0 /* Pods_MobiTalksTDDiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81D9324FD0CAB4B24A5401B /* Pods_MobiTalksTDDiOS.framework */; };
 		71A4038C21929735008D9150 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4038B21929735008D9150 /* API.swift */; };
 		71A4038E21929846008D9150 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4038D21929846008D9150 /* Path.swift */; };
+		71A4039021929CC8008D9150 /* Login.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71A4038F21929CC8008D9150 /* Login.strings */; };
 		71E995E6219293A500CAF347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E995E5219293A500CAF347 /* AppDelegate.swift */; };
 		71E995E8219293A500CAF347 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E995E7219293A500CAF347 /* LoginViewController.swift */; };
 		71E995ED219293A700CAF347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71E995EC219293A700CAF347 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		5113C05E9CDE0C1EC2C51206 /* Pods-MobiTalksTDDiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiTalksTDDiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobiTalksTDDiOS/Pods-MobiTalksTDDiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		71A4038B21929735008D9150 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		71A4038D21929846008D9150 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		71A4038F21929CC8008D9150 /* Login.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Login.strings; sourceTree = "<group>"; };
 		71E995E2219293A500CAF347 /* MobiTalksTDDiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobiTalksTDDiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E995E5219293A500CAF347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71E995E7219293A500CAF347 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,13 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		71A4039121929E20008D9150 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		71E995D9219293A500CAF347 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +119,7 @@
 		71E995E4219293A500CAF347 /* MobiTalksTDDiOS */ = {
 			isa = PBXGroup;
 			children = (
+				71A4039121929E20008D9150 /* UIComponents */,
 				71A4038A2192971C008D9150 /* API */,
 				71E996062192955D00CAF347 /* Modules */,
 				71E996052192952100CAF347 /* Application */,
@@ -154,6 +164,7 @@
 				71E9960C219295AF00CAF347 /* LoginInteractor.swift */,
 				71E9960E219295C800CAF347 /* LoginProtocols.swift */,
 				71E996102192961F00CAF347 /* LoginPresenterTests.swift */,
+				71A4038F21929CC8008D9150 /* Login.strings */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -264,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71E995F0219293A700CAF347 /* LaunchScreen.storyboard in Resources */,
+				71A4039021929CC8008D9150 /* Login.strings in Resources */,
 				71E995ED219293A700CAF347 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
