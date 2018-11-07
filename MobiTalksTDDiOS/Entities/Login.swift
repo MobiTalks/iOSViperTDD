@@ -7,31 +7,27 @@
 //
 
 struct Login: Codable {
-    var user: String
-    var pass: String
+    var email: String
+    var password: String
     
     enum CodingKeys: String, CodingKey {
-        case user = "user"
-        case pass = "pass"
+        case email = "email"
+        case password = "password"
     }
     
     func toDict() -> [String: String] {
         return [
-            "user": user,
-            "pass": pass
+            "email": email,
+            "password": password
         ]
     }
 }
 
 struct LoginSuccess: Codable {
-    var codigo: String?
-    var nome: String?
-    var email: String?
+    var token: String?
     
     enum CodingKeys: String, CodingKey {
-        case codigo
-        case nome
-        case email
+        case token
     }
 }
 

@@ -53,7 +53,7 @@ class API {
     private func makeRequest(url: [PathURL], parameters: [String: Any], method: HttpMethod) -> URLRequest? {
         
         let currentUrl = url.reduce("") { $0 + $1.rawValue }
-        
+        print(currentUrl)
         guard let `url` = URL(string: currentUrl) else { return nil}
         
         var request = URLRequest(
@@ -62,6 +62,13 @@ class API {
             timeoutInterval: 10
         )
         
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters    , options: .prettyPrinted)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.httpMethod = method.rawValue
         return request
     }

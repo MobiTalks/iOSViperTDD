@@ -37,7 +37,7 @@ class LoginPresenter {
     func primaryActionSelected() {
         if (inputedEmail ?? "").isValidEmail() && !(inputedPassword ?? "").isEmpty {
             view?.showLoading()
-            let login = Login.init(user: inputedEmail ?? "", pass: inputedPassword ?? "")
+            let login = Login.init(email: inputedEmail ?? "", password: inputedPassword ?? "")
             interactor?.validateLogin(login)
         } else {
             router.presentAlert(
